@@ -1,5 +1,6 @@
-### ENGLISH
+<details>
 
+<summary>ENGLISH</summary>
 
 # Method to Fix Sushi-Converted Subtitles
 
@@ -108,8 +109,12 @@ Example file structure:
  ┣ 📜Subtitle02_source.ass
  ┗ 📜Subtitle02_destination.ass
 ```
+</details>
 
-### FRANÇAIS
+<details>
+
+<summary>FRANÇAIS</summary>
+
 
 Cette méthode corrige les lignes de sous-titres qui débordent sur les scènes précédentes et suivantes.
 C'est un problème qui survient souvent lors de l'utilisation de [Sushi](https://github.com/tp7/Sushi) pour resynchroniser les sous-titres.  
@@ -220,4 +225,4 @@ Exemple de structure des fichiers :
      ┣ 📜Subtitle02_source.ass
      ┗ 📜Subtitle02_destination.ass
 
-  
+  </details>
