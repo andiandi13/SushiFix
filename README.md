@@ -61,6 +61,15 @@ Plusieurs logiciels permettent d'automatiser le renommage de plusieurs fichiers,
 - Placer dans le même dossier tous les fichiers .txt des keyframes des videos
 - Executer le fichier .py pour générer des version corrigées des SUB enregistrées avec le suffixe _fixed
 
+Exemple :
+
+📂Folder
+ ┣ 📜Subtitle01.sub
+ ┣ 📜Subtitle01.txt
+ ┣ 📜Subtitle02.sub
+ ┗ 📜Subtitle02.txt
+
+
 ## 4- Convertir les SUB corrigés en ASS
 
 - Placer les fichiers .sub corrigées et le fichier "Convert sub to ass.py" dans le même dossier
