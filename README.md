@@ -18,7 +18,11 @@ une ligne de sous-titre finira toujours en laissant un espace de 2 frames avant 
 
 ## Pré-requis
 
-Installer [Python](https://www.python.org/) : 
+- Installer [Python](https://www.python.org/)
+- Installer le script python "VideoTimestamps" par moi15moi https://github.com/moi15moi/VideoTimestamps
+- Installer [FFmpeg](https://www.ffmpeg.org/) et l'ajouter à la variable d'environnement [PATH](https://phoenixnap.com/kb/ffmpeg-windows)
+
+
 
 ## 1- Convertir les sous-titres .ass en .sub
 
