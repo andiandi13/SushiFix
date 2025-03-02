@@ -63,11 +63,13 @@ Plusieurs logiciels permettent d'automatiser le renommage de plusieurs fichiers,
 
 Exemple :
 
-📂Folder
- ┣ 📜Subtitle01.sub
- ┣ 📜Subtitle01.txt
- ┣ 📜Subtitle02.sub
- ┗ 📜Subtitle02.txt
+  
+    📂Folder
+     ┣ 📜Subtitle01.sub
+     ┣ 📜Subtitle01.txt
+     ┣ 📜Subtitle02.sub
+     ┗ 📜Subtitle02.txt
+
 
 
 ## 4- Convertir les SUB corrigés en ASS
