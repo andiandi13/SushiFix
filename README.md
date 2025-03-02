@@ -26,6 +26,9 @@ une ligne de sous-titre finira toujours en laissant un espace de 2 frames avant 
 
 ## 1- Convertir les sous-titres .ass en .sub
 
+
+
+
 Il faut utiliser SubtitleEdit (https://github.com/SubtitleEdit/subtitleedit/releases), qui converti correctement les sous-titres en .sub (format basé sur des frames et non des timecodes). Certains autres logiciels ou scripts sortent des frames incorrectes.
 
 - Ouvrir SubtitleEdit
@@ -36,9 +39,9 @@ Il faut utiliser SubtitleEdit (https://github.com/SubtitleEdit/subtitleedit/rele
 
 ## 2- Créer les fichiers .txt keyframes à partir des vidéos
 
-- Placer Extract_keyframes.sh dans le dossier des vidéos de destination (sur lesquelles synchroniser les sous-titres)
-- Lancer le fichier .sh
-- Attendre que chaque fichier .txt se génère (c'est assez long)
+- Placer Extract_keyframes.sh dans le dossier des vidéos sur lesquelles sont synchronisés les sous-titres)
+- Lancer le fichier Extract_keyframes.sh
+- Attendre que tous les fichiers .txt se génèrent (c'est assez long)
 
 ## 3- Corriger les fichiers SUB
 
@@ -53,3 +56,4 @@ Il faut utiliser SubtitleEdit (https://github.com/SubtitleEdit/subtitleedit/rele
 - Les fichiers .sub seront convertis en .ass
 
 Note : La partie de la conversion du texte et du formattage est gérée par ffmpeg, et la partie de conversion des frames en timecodes est gérée par le script VideoTimestamps par moi15moi.
+Ainsi les timecodes correspondent précisement aux frames sources, ce qui est habituellemnt mal géré par les autres logiciels (FFmpeg inclus)
