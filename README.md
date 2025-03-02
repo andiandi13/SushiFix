@@ -72,4 +72,24 @@ Ainsi les timecodes correspondent précisement aux frames sources, ce qui est ha
 
 ## 5- (Optionnel) Copier les timecodes des sous-titres ASS dans les fichiers sources
 
-Lors de la première conversion en SUB
+Cette étape requiert l'installation de pysubs2.
+
+Dans le même dossier : 
+
+- Placer le fichier "Copy_timecodes_to_source.py"
+- Placer vos sous-titres ASS d'origine et les renommer "nom_source.ass"
+- Places les sous-titres ASS corrigés (à l'étape 4) et les renommer "nom_destination.ass"
+- Executer le script .py
+
+Des fichiers .ass avec le suffixe _final seront crées, ils correspondront aux fichiers sources avec les timecodes des fichiers destination
+
+Exemple de structure des fichiers :
+
+  
+    📂Folder
+     ┣ 📜Subtitle01_source.ass
+     ┣ 📜Subtitle01_destination.ass
+     ┣ 📜Subtitle02_source.ass
+     ┗ 📜Subtitle02_destination.ass
+
+  
