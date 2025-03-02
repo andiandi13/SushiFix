@@ -43,6 +43,13 @@ Il faut utiliser SubtitleEdit (https://github.com/SubtitleEdit/subtitleedit/rele
 - Lancer le fichier Extract_keyframes.sh
 - Attendre que tous les fichiers .txt se génèrent (c'est assez long)
 
+## 3- Renommer les fichiers .txt
+
+Les fichiers keyframes en .txt doivent avoir le même nom que leurs fichiers .sub correspondant
+Si le fichier 001.txt correspond aux keyframe d'une video, alors le fichier sous-titres .sub de cette vidéo devra être nommé 001.sub
+
+Plusieurs logiciels permettent d'automatiser le renommage de plusieurs fichiers, comme [Ant Renamer](https://www.antp.be/software/renamer/fr)
+
 ## 3- Corriger les fichiers SUB
 
 - Placer le fichier Fix-SUB.py dans le même dossier que les sous-titres SUB a corriger
