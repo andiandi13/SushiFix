@@ -1,6 +1,6 @@
 <details>
 
-<summary>ENGLISH</summary>
+<summary>Instructions (English)</summary>
 
 # Method to Fix Sushi-Converted Subtitles
 
@@ -113,7 +113,7 @@ Example file structure:
 
 <details>
 
-<summary>FRANÇAIS</summary>
+<summary>Instructions (Français)</summary>
 
 # Methode pour corriger les sous-titres convertis par Sushi
 
