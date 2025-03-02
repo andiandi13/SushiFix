@@ -21,12 +21,10 @@ une ligne de sous-titre finira toujours en laissant un espace de 2 frames avant 
 - Installer [Python](https://www.python.org/)
 - Installer le script python "VideoTimestamps" par moi15moi https://github.com/moi15moi/VideoTimestamps
 - Installer [FFmpeg](https://www.ffmpeg.org/) et l'ajouter à la variable d'environnement [PATH](https://phoenixnap.com/kb/ffmpeg-windows)
-
+- Installer [pysubs2](https://pypi.org/project/pysubs2/) (optionnel)
 
 
 ## 1- Convertir les sous-titres .ass en .sub
-
-
 
 
 Il faut utiliser SubtitleEdit (https://github.com/SubtitleEdit/subtitleedit/releases), qui converti correctement les sous-titres en .sub (format basé sur des frames et non des timecodes). Certains autres logiciels ou scripts sortent des frames incorrectes.
@@ -36,6 +34,13 @@ Il faut utiliser SubtitleEdit (https://github.com/SubtitleEdit/subtitleedit/rele
 - Glisser-déposer tous les fichier à convertir
 - Dans Format, choisir "MicroDVD (.sub)".
 - Cliquer sur "Convert" pour démarrer la conversion
+
+
+**Note : La conversion en .sub supprimera toutes les balises ASS ainsi que certains formatages.**
+
+**Si vous utilisez des sous-titres ASS bruts sans formatage et que vous souhaitez seulement corriger les timecodes, cela ne posera aucun problème**
+
+**Si vous utilisez des sous-titres ASS avec formatage, suivez aussi l'étape 5 pour transferer les timecodes corrigés vers vos fichiers ASS sources**
 
 ## 2- Créer les fichiers .txt keyframes à partir des vidéos
 
@@ -64,3 +69,7 @@ Plusieurs logiciels permettent d'automatiser le renommage de plusieurs fichiers,
 
 Note : La partie de la conversion du texte et du formattage est gérée par ffmpeg, et la partie de conversion des frames en timecodes est gérée par le script VideoTimestamps par moi15moi.
 Ainsi les timecodes correspondent précisement aux frames sources, ce qui est habituellemnt mal géré par les autres logiciels (FFmpeg inclus)
+
+## 5- (Optionnel) Copier les timecodes des sous-titres ASS dans les fichiers sources
+
+Lors de la première conversion en SUB
