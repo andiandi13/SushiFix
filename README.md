@@ -1,5 +1,20 @@
 Ceci est une méthode pour corriger les débordements des sous-titres convertis par sushi sur les scènes suivantes et précédentes
 
+Les règles suivantes sont appliquées :
+```
+Si une ligne de sous-titres commence sur une keyframe exacte, elle est décalée de +2 frames.
+Si une ligne de sous-titres commence sur 1 frame avant une keyframe, elle est décalée de +3 frames.
+Si une ligne de sous-titres commence sur 1 frame après une keyframe, elle est décalée de +1 frame.
+Si une ligne de sous-titres termine sur une keyframe exacte, elle est décalée de -3 frames.
+Si une ligne de sous-titres termine sur 1 frame après une keyframe, elle est décalée de -4 frames.
+Si une ligne de sous-titres termine sur 2 frames après une keyframe, elle est décalée de -5 frames.
+Si une ligne de sous-titres termine sur 1 frame avant une keyframe, elle est décalée de -2 frames.
+Si une ligne de sous-titres termine sur 2 frames avant une keyframe, elle est décalée de -1 frame.
+```
+
+Ainsi pour respecter les conventions de sous-titrage : 
+une ligne de sous-titre commencera toujours en laissant un espace de 2 frames après le changement de scène
+une ligne de sous-titre finira toujours en laissant un espace de 2 frames avant le changement de scène
 
 ## 1- Convertir les sous-titres .ass en .sub
 
