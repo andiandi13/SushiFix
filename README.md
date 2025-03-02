@@ -115,7 +115,7 @@ Example file structure:
 
 <summary>Instructions (Français)</summary>
 
-# Methode pour corriger les sous-titres convertis par Sushi
+# Méthode pour corriger les sous-titres convertis par Sushi
 
 
 Cette méthode corrige les lignes de sous-titres qui débordent sur les scènes précédentes et suivantes.
