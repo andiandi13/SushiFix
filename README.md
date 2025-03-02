@@ -115,6 +115,8 @@ Example file structure:
 
 <summary>FRANÇAIS</summary>
 
+# Methode pour corriger les sous-titres convertis par Sushi
+
 
 Cette méthode corrige les lignes de sous-titres qui débordent sur les scènes précédentes et suivantes.
 C'est un problème qui survient souvent lors de l'utilisation de [Sushi](https://github.com/tp7/Sushi) pour resynchroniser les sous-titres.  
