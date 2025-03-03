@@ -71,7 +71,7 @@ def process_ass_timecodes(original_ass, sub_file):
             new_ass_lines.append(line)
 
     # Écriture du nouveau fichier ASS avec les timecodes corrigés
-    with open(new_ass_file, "w", encoding="utf-8") as f:
+    with open(new_ass_file, "w", encoding="utf-8-sig") as f:
         f.writelines(new_ass_lines)
 
     # Supprimer le fichier intermédiaire FFmpeg
