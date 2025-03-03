@@ -11,13 +11,13 @@ FPS = Fraction(24000, 1001)
 # Création de l'instance de conversion de timestamps
 timestamps = FPSTimestamps(RoundingMethod.ROUND, Fraction(1000), FPS)
 
-def format_ass_time(seconds: float) -> str:
-    """Convertit un temps en format ASS h:mm:ss.xx en arrondissant les centièmes"""
-    hours = int(seconds // 3600)
-    minutes = int((seconds % 3600) // 60)
-    sec = seconds % 60
-    centiseconds = round(sec * 100) / 100  # Arrondi au lieu de tronquer
-    return f"{hours}:{minutes:02}:{centiseconds:05.2f}"
+def format_ass_time(centiseconds: int) -> str:
+    """Convertit un temps donné en centisecondes en format ASS h:mm:ss.xx"""
+    hours, remainder = divmod(centiseconds, 360000)  # 3600 * 100
+    minutes, remainder = divmod(remainder, 6000)     # 60 * 100
+    seconds, centis = divmod(remainder, 100)
+    
+    return f"{hours}:{minutes:02}:{seconds:02}.{centis:02}"
 
 def convert_sub_to_ass(sub_file):
     """Utilise FFmpeg pour convertir un fichier .sub en .ass sans toucher aux timecodes."""
@@ -49,8 +49,8 @@ def process_ass_timecodes(original_ass, sub_file):
         match = re.match(r"\{(\d+)\}\{(\d+)\}(.*)", line)
         if match:
             start_frame, end_frame, text = int(match.group(1)), int(match.group(2)), match.group(3)
-            start_time = format_ass_time(timestamps.frame_to_time(start_frame, TimeType.START))
-            end_time = format_ass_time(timestamps.frame_to_time(end_frame, TimeType.END))
+            start_time = format_ass_time(timestamps.frame_to_time(start_frame, TimeType.START, 2))
+            end_time = format_ass_time(timestamps.frame_to_time(end_frame, TimeType.END, 2))
             frame_times.append((start_time, end_time, text))
 
     # Réécriture du fichier .ass avec les nouveaux timecodes
