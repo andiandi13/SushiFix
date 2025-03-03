@@ -9,14 +9,14 @@ from video_timestamps import FPSTimestamps, TimeType, RoundingMethod
 FPS = Fraction(24000, 1001)
 
 # Création de l'instance de conversion de timestamps
-timestamps = FPSTimestamps(RoundingMethod.FLOOR, Fraction(1000), FPS)
+timestamps = FPSTimestamps(RoundingMethod.ROUND, Fraction(1000), FPS)
 
 def format_ass_time(seconds: float) -> str:
-    """Convertit un temps en format ASS h:mm:ss.xx en tronquant les centièmes"""
+    """Convertit un temps en format ASS h:mm:ss.xx en arrondissant les centièmes"""
     hours = int(seconds // 3600)
     minutes = int((seconds % 3600) // 60)
     sec = seconds % 60
-    centiseconds = math.floor(sec * 100) / 100  # Tronquer sans arrondir
+    centiseconds = round(sec * 100) / 100  # Arrondi au lieu de tronquer
     return f"{hours}:{minutes:02}:{centiseconds:05.2f}"
 
 def convert_sub_to_ass(sub_file):
