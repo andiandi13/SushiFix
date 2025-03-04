@@ -23,8 +23,32 @@ def convert_sub_to_ass(sub_file):
     """Utilise FFmpeg pour convertir un fichier .sub en .ass sans toucher aux timecodes."""
     ass_file = sub_file.replace(".sub", ".ffmpeg.ass")
 
-    # Exécuter ffmpeg pour obtenir un premier fichier .ass (seulement pour le texte et le formatage)
-    subprocess.run(["ffmpeg", "-y", "-i", sub_file, ass_file], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+    # Lire le fichier .sub pour vérifier le nombre de lignes
+    with open(sub_file, "r", encoding="utf-8") as f:
+        sub_lines = f.readlines()
+
+    # Si le fichier contient moins de 3 lignes, dupliquer les lignes nécessaires
+    if len(sub_lines) < 3:
+        if len(sub_lines) == 1:
+            # Dupliquer la ligne deux fois en s'assurant qu'elles soient sur des lignes séparées
+            sub_lines = [sub_lines[0].rstrip("\n") + "\n", sub_lines[0].rstrip("\n") + "\n", sub_lines[0].rstrip("\n") + "\n"]
+        elif len(sub_lines) == 2:
+            # Dupliquer la dernière ligne une fois en s'assurant qu'elle soit sur une nouvelle ligne
+            sub_lines = [sub_lines[0].rstrip("\n") + "\n", sub_lines[1].rstrip("\n") + "\n", sub_lines[1].rstrip("\n") + "\n"]
+
+        # Écrire les lignes dupliquées dans un fichier temporaire
+        temp_sub_file = sub_file.replace(".sub", ".temp.sub")
+        with open(temp_sub_file, "w", encoding="utf-8") as f:
+            f.writelines(sub_lines)
+        
+        # Utiliser le fichier temporaire pour la conversion
+        subprocess.run(["ffmpeg", "-y", "-i", temp_sub_file, ass_file], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        
+        # Supprimer le fichier temporaire après la conversion
+        os.remove(temp_sub_file)
+    else:
+        # Utiliser le fichier original pour la conversion
+        subprocess.run(["ffmpeg", "-y", "-i", sub_file, ass_file], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
 
     if not os.path.exists(ass_file):
         print(f"Erreur : impossible de convertir {sub_file} en ASS avec FFmpeg.")
