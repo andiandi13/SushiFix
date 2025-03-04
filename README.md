@@ -20,7 +20,7 @@ If a subtitle line ends 1 frame before a keyframe, it is shifted by -2 frames.
 If a subtitle line ends 2 frames before a keyframe, it is shifted by -1 frame.
 ```
 
-To follow common subtitles guidelines :
+To follow common subtitling guidelines :
 - A subtitle line will always start with a 2-frame gap after a scene change.
 - A subtitle line will always end with a 2-frame gap before a scene change.
 
