@@ -22,7 +22,7 @@ def process_files(source_file, dest_file, output_file):
 
     try:
         # Sauvegarde dans un nouveau fichier avec le suffixe _final.ass
-        sub_source.save(output_file, format="ass", encoding="utf-8")
+        sub_source.save(output_file, format="ass", encoding="utf-8-sig")
         print(f"Fichier généré : {output_file}")
     except Exception as e:
         print(f"Erreur lors de l'enregistrement du fichier {output_file}: {e}")
