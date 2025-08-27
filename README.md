@@ -28,6 +28,7 @@ To follow common subtitling guidelines :
 
 - Install [Python](https://www.python.org/)
 - Install the Python script "VideoTimestamps" by moi15moi: https://github.com/moi15moi/VideoTimestamps
+- Install [Git for Windows](https://git-scm.com/downloads) (required to execute .sh files)
 - Install [FFmpeg](https://www.ffmpeg.org/) and add it to the [PATH](https://phoenixnap.com/kb/ffmpeg-windows) environment variable.
 - Install [pysubs2](https://pypi.org/project/pysubs2/) (optional)
 
@@ -143,6 +144,7 @@ une ligne de sous-titre finira toujours en laissant un espace de 2 frames avant 
 ## Pré-requis
 
 - Installer [Python](https://www.python.org/)
+- INstaller [Git pour Windows](https://git-scm.com/downloads) (nécessaire pour lancer le script .sh)
 - Installer le script python "VideoTimestamps" par moi15moi https://github.com/moi15moi/VideoTimestamps
 - Installer [FFmpeg](https://www.ffmpeg.org/) et l'ajouter à la variable d'environnement [PATH](https://phoenixnap.com/kb/ffmpeg-windows)
 - Installer [pysubs2](https://pypi.org/project/pysubs2/) (optionnel)
